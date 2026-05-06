@@ -1,4 +1,5 @@
 from flask import Flask, render_template, jsonify, request
+from flask_cors import CORS
 import yfinance as yf
 import requests
 import pandas as pd
@@ -16,6 +17,7 @@ from alpaca.data.timeframe import TimeFrame, TimeFrameUnit
 
 load_dotenv(os.path.join(os.path.dirname(__file__), '.env'))
 app = Flask(__name__)
+CORS(app)
 _alpaca = StockHistoricalDataClient(
     os.environ.get("ALPACA_API_KEY"),
     os.environ.get("ALPACA_API_SECRET")
