@@ -19,9 +19,10 @@ load_dotenv(os.path.join(os.path.dirname(__file__), '.env'))
 app = Flask(__name__)
 CORS(app, origins=[
     "https://stockapp-3vku.onrender.com",
+    "https://projectlvx.lovable.app",
     r"https://.*\.lovable\.app",
     r"https://.*\.lovableproject\.com",
-    "http://localhost:5173",   # Lovable local dev
+    "http://localhost:5173",
     "http://localhost:3000",
 ])
 _alpaca = StockHistoricalDataClient(
